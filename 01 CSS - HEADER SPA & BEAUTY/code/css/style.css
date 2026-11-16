@@ -1,0 +1,562 @@
+/* ============ RESET + VARIABLES ============ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ::root definicion de variables globales */
+:root {
+  --navy: #264065; 
+  --green: #b0d4cc;
+  --cream: #f9f8f5;
+  --gray: #8f8f8f;
+}
+
+/* 
+body; cuerpo del documento, 
+font-family; fuente del texto, 
+color; color del texto, 
+overflow-x: hidden, oculta y recorta cualquier contenido horizontal 
+*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--navy);
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* 
+a; enlace a una pagina web, 
+img; imagen, 
+buttom; boton 
+*/
+/* text-decoration: none, elimina cualquier decoracion o adorno de texto */
+/* color: inherit, hereda el mismo color que tiene su elemento padre */
+/* display: block, conviente un elemnto de bloque */
+/* border: 0, sin bordes, backgrounds: none, sin fondos, cursor: pointer, cambia el cursor del raton cuando esta encima de un icono */
+a { text-decoration: none; color: inherit; }
+img { display: block; }
+button { border: 0; background: none; cursor: pointer; }
+
+/* ============ HERO (diseño base 1440px) ============ */
+
+/* 
+.; selector de clases, 
+hero; seccion principal de una pagina web, 
+position: relative; los elementos se mueven ligeramente en base a su posicion estatica
+*/
+/* height, altura de 808 pixeles */
+/* background: linear-gradient, fondo de color con un degradado de color suave */
+.hero {
+  position: relative;
+  height: 808px;
+  background: linear-gradient(to bottom, var(--cream) 613px, #fff 613px);
+}
+
+/* Panel verde de la derecha */
+/* position: absolute, el elemento se coloca en base al contenedor padre */
+/* top:0 posiciona hacia lo vertical un elemento, en este caso es cero */
+/* left, posicionar hacia la izquierda,  calc(calcular) (50% + 243px; tomar la mitad de la pantalla y deplazar 243 pixeles hacia la izquierda */
+/* rigth: 0; posicionar hacia la derecha, en este caso es cero */
+/* height: altura de 613 pixeles */
+/* background: fondo de color usando :root, en este caso green(verde) */
+.hero__panel {
+  position: absolute;
+  top: 0;
+  left: calc(50% + 243px);
+  right: 0;
+  height: 613px;
+  background: var(--green);
+}
+
+/* 
+position: relative, el elmento se mueve ligeramente en base a su posicion estatica
+width: define el ancho del area del contenido, en este caso 1440 pixeles
+height: defina el alto del contenido, en este caso 100%
+margin: define el espacio transperente que rodea a un elemento, en este caso 0 (arriba/abajo) y auto(derecha/izquierda)
+*/
+.hero__inner {
+  position: relative;
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* ============ HEADER ============ */
+
+/* 
+position: relative, el elmento se mueve ligeramente en base a su posicion estatica
+z-index: 10, establece el nivel de profundidad en el que esta un elemento sobre  los demas
+height: defina el alto del contenido, en este caso 84px
+padding: espacion interno del elemento y su borde, en este caso 0(arriba) 120pixeles(derecha) 0(abajo) 119pixeles(izquierda)
+display: flex, activa el modo flexbox (modelo de caja flexible)
+align-items: center, alinea verticalmenete los elemnetos hijos en el centro (solo funciona si se activa primero display:flex)
+ */
+.header {
+  position: relative;
+  z-index: 10;
+  height: 84px;
+  padding: 0 120px 0 119px;
+  display: flex;
+  align-items: center;
+}
+
+/* logo GlowQueen  */
+.header__logo img { width: 158px; height: auto; }
+
+
+/* menu de arriba */
+/* 
+margin-left: 124px, espacio de margen exterior en el aldo izquierdo, en este caso 124 pixeles
+display: flex, activa el modo flexbox (modelo de caja flexible)
+align-items: center, alinea verticalmenete los elemnetos hijos en el centro (solo funciona si se activa primero display:flex)
+gap: 42px, define el espacio de separacion uniforme (se utiliza cuando se activa display:flex)
+font-size: 15px, el tamaño del texto, en este caso 15 pixeles
+font-weight: 500, grosor del texto o caracteres, 500 equvale a medium(mediano)
+*/
+.nav {
+  margin-left: 124px;
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+/* MORE + ICONO */
+
+/*
+display: flex, activa el modo flexbox (modelo de caja flexible)
+align-items: center, alinea verticalmenete los elemnetos hijos en el centro (solo funciona si se activa primero display:flex)
+gap: 6px, define el espacio de separacion uniforme (se utiliza cuando se activa display:flex)
+*/
+.nav__more { 
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+}
+
+/* 
+width: 18px, define el ancho del area del contenido, en este caso 18 pixeles
+height: 18px,defina el alto del contenido, en este caso 18 pixeles
+*/
+.nav__more img { 
+  width: 18px; 
+  height: 18px; 
+}
+
+
+/* iconos buscar y compras junto a sign in y sign up */
+
+/*
+margin-left: auto, espacio de margen exterior en el aldo izquierdo, en este caso en modo automatico
+display: flex, activa el modo flexbox (modelo de caja flexible)
+align-items: center, alinea verticalmenete los elemnetos hijos en el centro (solo funciona si se activa primero display:flex)
+*/
+.header__actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/*
+width: define el ancho del area del contenido, en este caso 26 pixeles
+height: defina el alto del contenido, en este caso 26 pixeles
+*/
+.icon-btn img { 
+  width: 26px; 
+  height: 26px; 
+}
+
+/*
+margin-left: 22px, espacio de margen exterior en el lado izquierdo, en este caso 22 pixeles hacia la derecha
+*/
+.icon-btn + .icon-btn { 
+  margin-left: 22px; 
+}
+
+/*
+margin-left: 54px, espacio de margen exterior en el lado izquierdo, en este caso 54 pixeles hacia la derecha
+font-size: 15px, el tamaño del texto, en este caso 15 pixeles
+font-weight: 500, grosor del texto o caracteres, 500 equvale a medium(mediano)
+text-decoration: underline, añade una linea horizontal por debajo del texto
+*/
+.header__signin {
+  margin-left: 54px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* ============ BOTONES ============ */
+
+/* 
+display: inline-flex, es un contenedor en linea, es decir combina el inline(en linea) con flexbox(modelo de caja)
+align-items: center, alinea verticalmenete los elemnetos hijos en el centro (solo funciona si se activa primero display:inline-flex)
+justify-content: center, para alinear y centrar los elementos hijos as lo largo del eje principal del contenedor
+border-radius: 999px, sirve para redondear las esquinas del border exterior de un elemento
+font-family; tipo de letra o familia tipografica, en este caso son 2, el primero de la ziquierda va primero 'Montserrat'
+font-weight: 500, grosor del texto o caracteres, 500 equvale a medium(mediano)
+*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+/* 
+background: var(--navy), fondo de color usando :root, que es var(--navy) 
+color, color del texto, en este caso blanco (white)
+*/
+.btn--primary { 
+  background: var(--navy); 
+  color: #fff; 
+}
+
+/*
+margin-left: 31px, espacio de margen exterior en el lado izquierdo, en este caso 31 pixeles hacia la derecha
+width: 112px, define el ancho del area del contenido, en este caso 112 pixeles
+height: 45px, defina el alto del contenido, en este caso 45 pixeles
+font-size: 16px, el tamaño del texto, en este caso 16 pixeles
+transition: all .5s ease, permite cambiar el color de una propiedad de manera gradual y suave, en este caso;
+ all(toda la propiedad), .5s(tiempo de tarda la animacion) ease(ritmo de la animacion)
+*/
+.btn--signup { 
+  margin-left: 31px; 
+  width: 112px; 
+  height: 45px; 
+  font-size: 16px; 
+  transition: all .5s ease;
+}
+
+/* 
+:hover, cambia en fondo de color donde tocara el curso (se debe combinar primero la propiedad transition para que funcione)
+*/
+.btn--signup:hover {
+  background-color: #8f8f8f;
+}
+
+/*
+width: 135px, define el ancho del area del contenido, en este caso 135 pixeles
+height: 44px, defina el alto del contenido, en este caso 44 pixeles
+font-size: 16px, el tamaño del texto, en este caso 16 pixeles
+transition: all .5s ease, permite cambiar el color de una propiedad de manera gradual y suave, en este caso;
+ all(toda la propiedad), .5s(tiempo de tarda la animacion) ease(ritmo de la animacion)
+*/
+.btn--book   { 
+  width: 135px; 
+  height: 44px; 
+  font-size: 16px; 
+  transition: all .5s ease;
+}
+
+/*
+:hover, cambia en fondo de color donde tocara el curso (se debe combinar primero la propiedad transition para que funcione)
+*/
+.btn--book:hover {
+  background-color: #8f8f8f;
+}
+
+
+/* ============ TEXTO PRINCIPAL ============ */
+
+/*
+position: absolute, los elementos se colocan en base al contenedor padre
+top: 146px, posicion vertical en este caso 146 pixeles
+left: 119px posicionar hacia la izquierda, en este caso 119 pixeles
+z-index: 5, controla el orden de apilamiento del eje z
+*/
+.hero__content {
+  position: absolute;
+  top: 146px;
+  left: 119px;
+  z-index: 5;
+}
+
+/* 
+font-family; tipo de letra o familia tipografica, en este caso son 2, el primero de la ziquierda va primero 'Poppins'
+font-weight: 700, grosor del texto o caracteres, 700 equvale a bold(negritas)
+font-size: 52px, el tamaño del texto, en este caso 52 pixeles
+line-height: 60px, define la altura de la linea de texto, en este caso 60 pixeles
+color: var(--navy), color del texto usando :root, que es var(--navy)
+*/
+.hero__content h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 60px;
+  color: var(--navy);
+}
+
+/*
+margin-top: 25px, separa el elemento establecido en el espacioo exterior (margen) en este caso 25 pixeles hacia abajo
+font-size: 17px, el tamaño del texto, en este caso 17 pixeles
+line-height: 30px, define la altura de la linea de texto, en este caso 30 pixeles
+color: var(--gray), color del texto, en este caso del :root (color gris)
+*/
+.hero__content p {
+  margin-top: 25px;
+  font-size: 17px;
+  line-height: 30px;
+  color: var(--gray);
+}
+
+/*
+margin-top: 43px, separa el elemento establecido en el espacioo exterior (margen) en este caso 43 pixeles hacia abajo
+display: flex, activa el modo flexbox (modelo de caja flexible)
+align-items: center, alinea verticalmenete los elemnetos hijos en el centro (solo funciona si se activa primero display:flex)
+gap: 55px, define el espacio de separacion uniforme (se utiliza cuando se activa display:flex)
+*/
+.hero__buttons {
+  margin-top: 43px;
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+/*
+display: flex, activa el modo flexbox (modelo de caja flexible)
+align-items: center, alinea verticalmenete los elemnetos hijos en el centro (solo funciona si se activa primero display:flex)
+gap: 12px, define el espacio de separacion uniforme (se utiliza cuando se activa display:flex)
+font-size: 16px, el tamaño del texto, en este caso 16 pixeles
+font-weight: 500, grosor del texto o caracteres, 500 equivale a medium(mediano)
+*/
+.watch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/*
+width: 36px, define el ancho del area del contenido, en este caso 36 pixeles
+height: 36px, defina el alto del contenido, en este caso 36 pixeles
+border-radius: 50%, sirve para redondear las esquinas del border exterior de un elemento
+background: fondo de color, en este caso white(blanco) 
+display: grid, convierte un elemento en un contenedor de cuadricula
+place-items: center, centrar elementos de forma perfecta tanto horizontal como verticalmente
+box-shadow: siver para proyectar una sombra alrededor de un elemento;
+0(horizontal) 10px(vertical) 22px(radio de difucion) rgba(38, 64, 101, .14)(color y opacidad)
+*/
+.watch__circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 22px rgba(38, 64, 101, .14);
+}
+
+/*
+width: 20px, define el ancho del area del contenido, en este caso 20 pixeles
+height: 20px defina el alto del contenido, en este caso 20 pixeles
+*/
+.watch__circle img { 
+  width: 20px; 
+  height: 20px; 
+}
+
+/* ============ ESTADÍSTICAS ============ */
+
+/*
+position: absolute, los elementos se colocan en base al contenedor padre
+top: 506px, posicion vertical que es al tipe de arriba, en este caso 506 pixeles
+left: 119px posicionar hacia la izquierda, en este caso 119 pixeles
+width: 482px, define el ancho del area del contenido, en este caso 482 pixeles
+height: 220px defina el alto del contenido, en este caso 220 pixeles
+padding-top: 24px, define el espacio de relleno interior en este caso 24 pixeles
+display: grid, convierte un elemento en un contenedor de cuadricula
+grid-template-columns: repeat(3, 1fr), crea exactamente 3 columnas del mismo tamaño 1fr(fraccion)
+background: white, fondo de color, en este caso blanco
+border-radius: 16px 16 px 0 0, sirve para redondear las esquinas del border exterior de un elemento;
+16px(esquina superior izquierda) 16px(esquina superior derecha) 0(esquina inferior derecha) 0(esquina inferior izquierda)
+z-index: 5, controla el orden de apilamiento del eje z
+*/
+.stats {
+  position: absolute;
+  top: 506px;
+  left: 119px;
+  width: 482px;
+  height: 220px;
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #fdfdfc;
+  border-radius: 16px 16px 0 0;
+  z-index: 5;
+}
+
+/*
+text-align: cente, sirve para alinear el texto de forma centrada horizontalmente
+*/
+.stats__item { 
+  text-align: center; 
+}
+
+/*
+width: 54px, define el ancho del area del contenido, en este caso 54 pixeles
+height: 54px defina el alto del contenido, en este caso 54 pixeles
+margin: 0 auto, centrar horizontalmente un elemento de bloque, 0(arriba y abajo) auto(izquierda y derecha)
+filter: drop-shadow(0 8px 12px rgba(38, 64, 101, .15)), dibuja usa sombra basandose en el modelo de la caja;
+0(desplazamiento horizontal) 8px(deplazamiento vertical hacia abajo) 12px(nivel de difuminado) rgba(....) (color y opacidad de la sombra)
+*/
+.stats__item img {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 12px rgba(38, 64, 101, .15));
+}
+
+/*
+display: block, se apila de vertical, ocupa todo el ancho disponibla de su etiqueta contenedora
+margin-top: 18px, separa el elemento establecido en el espacio exterior (margen) en este caso 18 pixeles hacia abajo
+font-size: 32px, el tamaño del texto, en este caso 32 pixeles
+line-height: 40px, define la altura de la linea de texto, en este caso 40 pixeles
+font-weight: 500, grosor del texto o caracteres, 500 equivale a medium(mediano)
+color: var(--navy), color del texto usando :root 
+*/
+.stats__item strong {
+  display: block;
+  margin-top: 18px;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+/*
+display: block, se apila de vertical, ocupa todo el ancho disponibla de su etiqueta contenedora
+margin-top: 11px, separa el elemento establecido en el espacio exterior (margen) en este caso 11 pixeles hacia abajo
+font-size: 15px, el tamaño del texto, en este caso 15 pixeles
+line-height: 20px, define la altura de la linea de texto, en este caso 20 pixeles
+color: var(--navy), color del texto usando :root 
+*/
+.stats__item span {
+  display: block;
+  margin-top: 11px;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--gray);
+}
+
+/* ============ HOJA + MUJER ============ */
+
+/*
+position: absolute, el elemento se coloca en base al contenedor padre
+top: 35px posiciona hacia lo vertical un elemento, en este caso 35 pixeles
+left: 873px posicionar hacia la izquierda en este caso 873 pixeles
+width: 427px, define el ancho del area del contenido, en este caso 427 pixeles
+z-index: 1, controla el orden de apilamiento del eje z
+*/
+.hero__leaf {
+  position: absolute;
+  top: 35px;
+  left: 873px;
+  width: 427px;
+  z-index: 1;
+}
+
+/*
+position: absolute, el elemento se coloca en base al contenedor padre
+top: 8px posiciona hacia lo vertical un elemento, en este caso 8 pixeles
+left: 290px posicionar hacia la izquierda en este caso 290 pixeles
+width: 1130px, define el ancho del area del contenido, en este caso 1130 pixeles
+z-index: 2, controla el orden de apilamiento del eje z
+pointer-events: none, controla si un elemento puede ser el objetos de eventos del puntero, y al usar noneignora por completo los eventos del puntero
+*/
+.hero__woman {
+  position: absolute;
+  top: 8px;
+  left: 290px;
+  width: 1130px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ============ TESTIMONIOS ============ */
+
+/*
+position: absolute, el elemento se coloca en base al contenedor padre
+z-index: 4, controla el orden de apilamiento del eje z
+width: 304px, define el ancho del area del contenido, en este caso 304 pixeles
+height: 185px defina el alto del contenido, en este caso 185 pixeles
+padding: 18px espacio interno del elemento y su borde, en este caso 18 pixeles (arriba)
+border-radius: 16px, sirve para redondear las esquinas del border exterior de un elemento
+background: rgba(255, 255, 255, .6), fondo de color en caso rgba(red, green, blue, alfa(opacidad))
+backdrop-filter: blur(12px), sirve para difuminar todo lo que se encuentra visualmente detras de un elemento; 
+blur(12px) aplica el desenfoque unicamente al area que esta detras del elemento
+-webkit-backdrop-filter: blur(12px), deja el contenido de tu elemnto intacto con un toque de difuminacion (blur(12px) 
+y para navegadores en safari, chrome y ios
+*/
+.testimonial {
+  position: absolute;
+  z-index: 4;
+  width: 304px;
+  height: 185px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/*
+top: 324px posiciona hacia lo vertical un elemento, en este caso 324 pixeles
+left: 1086px posicionar hacia la izquierda en este caso 1086 pixeles
+*/
+.testimonial--1 { 
+  top: 324px; 
+  left: 1086px; 
+}
+
+/*
+top: 558px posiciona hacia lo vertical un elemento, en este caso 558 pixeles
+left: 981px posicionar hacia la izquierda en este caso 981 pixeles
+*/
+.testimonial--2 { 
+  top: 558px; 
+  left: 981px; 
+}
+
+/*
+width: 24px, define el ancho del area del contenido, en este caso 24 pixeles
+height: auto, defina el alto del contenido, en este caso en modo automatico
+*/
+.testimonial img { 
+  width: 24px; 
+  height: auto; 
+}
+
+/*
+margin-top: 8px, separa el elemento establecido en el espacio exterior (margen) en este caso 8 pixeles hacia abajo
+font-family; tipo de letra o familia tipografica, en este caso son 2, el primero de la ziquierda va primero 'Poppins'
+font-size: 14px, el tamaño del texto, en este caso 14 pixeles
+line-height: 20px, define la altura de la linea de texto, en este caso 20 pixeles
+color: black, color del texto en este caso negro
+*/
+.testimonial p {
+  margin-top: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1c1c1c;
+}
+
+
+/*
+margin-top: 8px, separa el elemento establecido en el espacio exterior (margen) en este caso 8 pixeles hacia abajo
+font-family; tipo de letra o familia tipografica, en este caso son 2, el primero de la ziquierda va primero 'Poppins'
+font-size: 14px, el tamaño del texto, en este caso 14 pixeles
+font-weight: 600, grosor del texto o caracteres, 600 equivale a medium(mediano)
+color: black, color del texto en este caso negro
+*/
+.testimonial h4 {
+  margin-top: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
